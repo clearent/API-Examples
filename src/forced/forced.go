@@ -7,7 +7,7 @@ import ( "gateway"
 
 func main () {
     url := "https://gateway-sb.clearent.net/rest/v2/transactions"
-    apikey := "762ad38136b54570a03be604a5a5a1e5"
+    apikey := "api key goes here"
     transaction := []byte(`<transaction><type>FORCED SALE</type> <amount>200.00</amount> <card>4111111111111111</card> <exp-date>1020</exp-date> <id>12345</id> <authorization-code>AU234</authorization-code> </transaction>`)
 
     resp, err  := gateway.PostTrans(url, apikey, transaction)
