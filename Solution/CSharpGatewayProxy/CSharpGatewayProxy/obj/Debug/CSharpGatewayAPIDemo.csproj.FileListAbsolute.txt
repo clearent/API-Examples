@@ -1,0 +1,12 @@
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\C# Rest Demonstration\Solution\CSharpGatewayProxy\CSharpGatewayProxy\bin\Debug\CSharpGatewayProxy.exe.config
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\C# Rest Demonstration\Solution\CSharpGatewayProxy\CSharpGatewayProxy\bin\Debug\CSharpGatewayProxy.exe
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\C# Rest Demonstration\Solution\CSharpGatewayProxy\CSharpGatewayProxy\bin\Debug\CSharpGatewayProxy.pdb
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\C# Rest Demonstration\Solution\CSharpGatewayProxy\CSharpGatewayProxy\bin\Debug\Newtonsoft.Json.dll
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\C# Rest Demonstration\Solution\CSharpGatewayProxy\CSharpGatewayProxy\bin\Debug\System.Net.Http.Formatting.dll
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\C# Rest Demonstration\Solution\CSharpGatewayProxy\CSharpGatewayProxy\bin\Debug\System.Web.Http.dll
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\C# Rest Demonstration\Solution\CSharpGatewayProxy\CSharpGatewayProxy\bin\Debug\Newtonsoft.Json.xml
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\C# Rest Demonstration\Solution\CSharpGatewayProxy\CSharpGatewayProxy\bin\Debug\System.Net.Http.Formatting.xml
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\C# Rest Demonstration\Solution\CSharpGatewayProxy\CSharpGatewayProxy\bin\Debug\System.Web.Http.xml
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\C# Rest Demonstration\Solution\CSharpGatewayProxy\CSharpGatewayProxy\obj\Debug\CSharpGatewayAPIDemo.csprojResolveAssemblyReference.cache
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\C# Rest Demonstration\Solution\CSharpGatewayProxy\CSharpGatewayProxy\obj\Debug\CSharpGatewayProxy.exe
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\C# Rest Demonstration\Solution\CSharpGatewayProxy\CSharpGatewayProxy\obj\Debug\CSharpGatewayProxy.pdb
