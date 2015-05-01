@@ -1,0 +1,15 @@
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\VB Rest Demonstration\Solution\VBGatewayProxy\VBGatewayProxy\bin\Debug\VBGatewayProxy.exe.config
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\VB Rest Demonstration\Solution\VBGatewayProxy\VBGatewayProxy\bin\Debug\VBGatewayProxy.exe
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\VB Rest Demonstration\Solution\VBGatewayProxy\VBGatewayProxy\bin\Debug\VBGatewayProxy.pdb
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\VB Rest Demonstration\Solution\VBGatewayProxy\VBGatewayProxy\bin\Debug\VBGatewayProxy.xml
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\VB Rest Demonstration\Solution\VBGatewayProxy\VBGatewayProxy\bin\Debug\Newtonsoft.Json.dll
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\VB Rest Demonstration\Solution\VBGatewayProxy\VBGatewayProxy\bin\Debug\System.Net.Http.Formatting.dll
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\VB Rest Demonstration\Solution\VBGatewayProxy\VBGatewayProxy\bin\Debug\System.Web.Http.dll
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\VB Rest Demonstration\Solution\VBGatewayProxy\VBGatewayProxy\bin\Debug\Newtonsoft.Json.xml
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\VB Rest Demonstration\Solution\VBGatewayProxy\VBGatewayProxy\bin\Debug\System.Net.Http.Formatting.xml
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\VB Rest Demonstration\Solution\VBGatewayProxy\VBGatewayProxy\bin\Debug\System.Web.Http.xml
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\VB Rest Demonstration\Solution\VBGatewayProxy\VBGatewayProxy\obj\Debug\VBGatewayProxy.Resources.resources
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\VB Rest Demonstration\Solution\VBGatewayProxy\VBGatewayProxy\obj\Debug\VBGatewayProxy.vbproj.GenerateResource.Cache
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\VB Rest Demonstration\Solution\VBGatewayProxy\VBGatewayProxy\obj\Debug\VBGatewayProxy.exe
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\VB Rest Demonstration\Solution\VBGatewayProxy\VBGatewayProxy\obj\Debug\VBGatewayProxy.xml
+C:\dev\hackathon_fixed\dotNET\fixed\Rest .Net Demonstration\VB Rest Demonstration\Solution\VBGatewayProxy\VBGatewayProxy\obj\Debug\VBGatewayProxy.pdb
