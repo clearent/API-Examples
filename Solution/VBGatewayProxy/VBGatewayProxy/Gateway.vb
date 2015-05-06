@@ -23,8 +23,6 @@ Namespace VBGatewayAPIDemo
             Dim transaction As String
             Dim response As Task(Of String)
 
-            InitializeConnection(client).Wait()
-
             ' sale
             transaction = "{""type"":""SALE"",""card"":""4111111111111111"", ""exp-date"":""1218"",""amount"":""23.00""}"
             response = RunTransaction(client, transaction)
@@ -56,15 +54,6 @@ Namespace VBGatewayAPIDemo
             Debug.WriteLine("response = " + response.Result)
 
         End Sub
-
-        Shared Async Function InitializeConnection(client As HttpClient) As Task(Of String)
-            If Not isInitialized Then
-                Await client.GetAsync(config.BaseUri)
-                Debug.WriteLine("connection initialized")
-                isInitialized = True
-            End If
-        End Function
-
 
         Shared Async Function RunTransaction(client As HttpClient, transaction As String) As Task(Of String)
             ' examine our request body
