@@ -11,7 +11,7 @@ git pull
 # Switch to the branch of your language of choice
 # Google GO: 
 
-git checkout -b go 
+git checkout go 
 
 git branch 
 
@@ -19,7 +19,7 @@ git pull
 
 # C #: 
 
-git checkout -b C#
+git checkout  C#
 
 git branch 
 
@@ -27,7 +27,7 @@ git pull
 
 # java:
 
-git checkout -b java
+git checkout java
 
 git branch 
 
@@ -35,7 +35,7 @@ git pull
 
 # php:
 
-git checkout -b php
+git checkout php
 
 git branch 
 
@@ -44,7 +44,7 @@ git pull
 
 # python:
 
-git checkout -b python
+git checkout  python
 
 git branch 
 
@@ -52,7 +52,7 @@ git pull
 
 #  VB
 
-git checkout -b vbnet
+git checkout vbnet
 
 git branch 
 
