@@ -26,4 +26,4 @@ git clone https://github.com/Clearent-Gateway/API-Examples/tree/python
 
 VB
 
-https://github.com/Clearent-Gateway/API-Examples/tree/vbnet
+git clone https://github.com/Clearent-Gateway/API-Examples/tree/vbnet
