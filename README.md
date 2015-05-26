@@ -1,6 +1,6 @@
 # API Examples
 
-To view the code examples click the branch drop down above.  Where see branch:master with the down arrow, click the arrow and you will see a list of all the languauge examples we have to date, or you can use the commands below to clone an example you are looking for:
+To view the code examples click the branch drop down above.  Where you see the branch:master with the down arrow, click the arrow and you will see a list of all the languauge examples we have to date and view the code in your browser, or you can use the commands below to clone an example you are looking for:
 
 Google GO: 
 
