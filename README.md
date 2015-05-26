@@ -1,4 +1,29 @@
 # API Examples
 
+To view the code examples click the branch drop down above.  Where see branch:master with the down arrow, click the arrow and you will see a list of all the languauge examples we have to date, or you can use the commands below to clone an example you are looking for:
 
-Each Branch is a different code example for our API integrations.   These are full working examples
+Google GO: 
+
+git clone  https://github.com/Clearent-Gateway/API-Examples/tree/go
+
+C #: 
+
+git clone https://github.com/Clearent-Gateway/API-Examples/tree/C%23
+
+
+java:
+
+git clone  https://github.com/Clearent-Gateway/API-Examples/tree/java
+
+php:
+
+git clone  https://github.com/Clearent-Gateway/API-Examples/tree/php
+
+
+python:
+
+git clone https://github.com/Clearent-Gateway/API-Examples/tree/python
+
+VB
+
+https://github.com/Clearent-Gateway/API-Examples/tree/vbnet
