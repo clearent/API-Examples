@@ -1,6 +1,0 @@
-Manifest-Version: 1.0
-Archiver-Version: Plexus Archiver
-Built-By: gmino
-Created-By: Apache Maven 3.0.4
-Build-Jdk: 1.8.0_05
-
