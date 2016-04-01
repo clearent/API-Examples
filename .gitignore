@@ -1,6 +1,6 @@
 .classpath
 .project
-.settings/*
+.settings
 target/*
 /target/
 src/main/resources/public/bower_components/*
@@ -18,4 +18,6 @@ src/main/resources/vendor/*
 src/main/resources/public/*
 coverage/*
 *.log
+META-INF
+bin
 
