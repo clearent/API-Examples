@@ -1,9 +1,6 @@
 package sample.domain.recurringPayments;
 
 import com.google.gson.annotations.SerializedName;
-/**
- * Created by apeck on 6/3/2016.
- */
 
 public class Token {
     String card = "4111111111111111";

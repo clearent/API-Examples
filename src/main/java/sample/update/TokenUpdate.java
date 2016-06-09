@@ -1,8 +1,5 @@
 package sample.update;
 
-/**
- * Created by apeck on 6/3/2016.
- */
 import com.google.gson.Gson;
 import sample.domain.recurringPayments.TokenInfo;
 

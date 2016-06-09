@@ -2,9 +2,6 @@ package sample.domain;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by apeck on 6/9/2016.
- */
 public class TokenAVS {
     String card = "4111111111111111";
     @SerializedName("exp-date")

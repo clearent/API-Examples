@@ -2,9 +2,6 @@ package sample.domain.recurringPayments;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by apeck on 6/3/2016.
- */
 public class TokenInfo {
     String description = "new token";
     @SerializedName("customer-key")
