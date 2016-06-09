@@ -15,7 +15,7 @@ import java.net.URL;
 
 public class TokenCreationAVS {
 
-    private static final String API_URI = "https://gateway-qa.clearent.net/rest/v2/tokens";
+    private static final String API_URI = "https://gateway-sb.clearent.net/rest/v2/tokens";
     private static final String API_KEY = "YOUR-API-KEY-HERE";
     private static final String ACCEPT_HEADER_KEY = "Accept";
     private static final String APPLICATION_JSON = "application/json";
