@@ -4,7 +4,7 @@ $id = $_GET ['id'];
 // Set the API URI
 $uri = "https://gateway-sb.clearent.net/rest/v2/transactions?id=" . $id;
 $contenttype = "text/html";
-$apikey = "api key goes here";
+$apikey = "12fa1a5617464354a72b3c9eb92d4f3b";
 
 $headers = array (
         "Accept: " . $contenttype,
