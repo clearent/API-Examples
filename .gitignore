@@ -1,0 +1,17 @@
+.classpath
+.project
+.settings/
+.idea/
+coverage/
+karma/
+node_modules/
+plato/
+target/
+*.log
+virterm.iml
+test-results.xml
+update.bat
+src/main/resources/public/
+src/main/resources/vendor/
+src/test/resources/properties/application.properties
+src/test/resources/properties/ingrian.properties
