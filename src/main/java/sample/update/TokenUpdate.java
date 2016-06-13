@@ -25,8 +25,6 @@ public class TokenUpdate {
 
     public static void main(String[] args) throws Exception {
         String response;
-
-        // sale
         System.out.println("Beginning updating token");
         response = updateToken();
         System.out.println(response);

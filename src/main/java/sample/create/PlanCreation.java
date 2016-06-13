@@ -25,7 +25,6 @@ public class PlanCreation {
 
     public static void main(String[] args) throws Exception {
         String response;
-        // sale
         System.out.println("Beginning adding payment plan");
         response = addPlan();
         System.out.println(response);

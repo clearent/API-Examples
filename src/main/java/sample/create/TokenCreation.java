@@ -24,8 +24,6 @@ public class TokenCreation {
 
     public static void main(String[] args) throws Exception {
         String response;
-
-        // sale
         System.out.println("Beginning adding token");
         response = addToken();
         System.out.println(response);

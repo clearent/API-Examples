@@ -25,8 +25,6 @@ public class PlanUpdate {
 
     public static void main(String[] args) throws Exception {
         String response;
-
-        // sale
         System.out.println("Beginning updating plan");
         response = updatePlan();
         System.out.println(response);

@@ -1,42 +1,27 @@
-package sample.update;
+package sample;
 
-
-import com.google.gson.Gson;
-import sample.domain.recurringPayments.CustomerInfo;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
-public class CustomerUpdate {
+public class TokenDeletion {
 
-    private static final String API_URI = "https://gateway-sb.clearent.net/rest/v2/customers/CUSTOMER-KEY-HERE";
+    private static final String API_URI = "https://gateway-sb.clearent.net/rest/v2/tokens/TOKEN-KEY-HERE";
     private static final String API_KEY = "YOUR-API-KEY-HERE";
     private static final String ACCEPT_HEADER_KEY = "Accept";
     private static final String APPLICATION_JSON = "application/json";
     private static final String CONTENT_TYPE_KEY = "Content-Type";
-    private static final String POST_METHOD = "PUT";
+    private static final String POST_METHOD = "DELETE";
     private static final boolean OUTPUT_TRUE = true;
 
     public static void main(String[] args) throws Exception {
         String response;
-        System.out.println("Beginning updating Customer");
-        response = updateCustomer();
+        String input = "";
+        System.out.println("Beginning deleting token");
+        response = requestTransaction(input);
         System.out.println(response);
-
-    }
-
-    private static String updateCustomer() throws Exception {
-        CustomerInfo customer = new CustomerInfo();
-        Gson gson = new Gson();
-        String jsonCustomer = gson.toJson(customer);
-        return requestTransaction(jsonCustomer);
     }
 
     private static String requestTransaction(String requestBody)
@@ -59,8 +44,7 @@ public class CustomerUpdate {
         }
     }
 
-    private static HttpURLConnection setupHttpConnection(
-            final String apiEndpoint) {
+    private static HttpURLConnection setupHttpConnection(final String apiEndpoint) {
         final URL url = createUrl(apiEndpoint);
         return openHttpConnection(url);
     }
@@ -119,5 +103,4 @@ public class CustomerUpdate {
         httpConnection.setRequestProperty(ACCEPT_HEADER_KEY, APPLICATION_JSON);
         httpConnection.setRequestProperty("api-key", API_KEY);
     }
-
 }
