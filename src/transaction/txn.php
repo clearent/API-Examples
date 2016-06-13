@@ -1,25 +1,28 @@
 <?php
 
 function parseArray($data) {
-    global $trans_id;
-    $html = "";
-    $html .= "<ul>";
-    foreach ( $data as $key => $value ) :
-    $html .= "<li>";
-    if (is_array ( $value )) {
-        $html .= "<b>" . $key . "</b> : " . parseArray ( $value );
-    } else if ($key == "href") {
-        $html .= "<b>" . $key . "</b> : <a href=\"tran_detail.php?id=" . $trans_id . "\" target=\"tran_detail\" >" . $trans_id . " - " . $value . "</a>";
+    if (is_null($data)){
+        $html = "no data to parse";
     } else {
-        if ($key == "id") {
-            $trans_id = $value;
-        }
-        $html .= "<b>" . $key . "</b> : " . $value;
+        global $trans_id;
+        $html = "";
+        $html .= "<ul>";
+        foreach ( $data as $key => $value ) :
+            $html .= "<li>";
+            if (is_array ( $value )) {
+                $html .= "<b>" . $key . "</b> : " . parseArray ( $value );
+            } else if ($key == "href") {
+                $html .= "<b>" . $key . "</b> : <a href=\"tran_detail.php?id=" . $trans_id . "\" target=\"tran_detail\" >" . $trans_id . " - " . $value . "</a>";
+            } else {
+                if ($key == "id") {
+                    $trans_id = $value;
+                }
+                $html .= "<b>" . $key . "</b> : " . $value;
+            }
+            $html .= "</li>";
+        endforeach;
+        $html .= "</ul>";
     }
-    $html .= "</li>";
-    endforeach;
-    $html .= "</ul>";
-
     return $html;
 }
 
@@ -28,6 +31,7 @@ $uri = "https://gateway-sb.clearent.net/rest/v2/transactions";
 $trans_id=0;
 $contenttype = "application/json";
 $apikey = "12fa1a5617464354a72b3c9eb92d4f3b";
+
 
 $headers = array (
         "Accept: " . $contenttype,
@@ -51,7 +55,7 @@ $txnDetails = array (
 );
 // Convert the PHP associative array to JSON
 $body = json_encode ( $txnDetails );
-
+$headers_encoded = json_encode ( $headers );
 $ch = curl_init ();
 
 // set the url
@@ -62,8 +66,18 @@ curl_setopt ( $ch, CURLOPT_HTTPHEADER, $headers );
 curl_setopt ( $ch, CURLOPT_POSTFIELDS, $body );
 // return full response if curl_exec is successful
 curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, 1 );
+
+// ignore ssl for our test
+//curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, false );
+curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
+
 // execute request
 $response = curl_exec ( $ch );
+
+$curl_error = "";
+if(curl_errno($ch)){
+    $curl_error .= 'Curl error: ' . curl_error($ch);
+}
 
 // Create the PHP associative array "$results" from the JSON response
 $results = json_decode ( $response, true );
@@ -81,6 +95,27 @@ td.half iframe{
 }
 </style>
 <table>
+
+    <tr>
+        <td colspan="2">
+            <hr> curl errors<hr>
+            <?= $curl_error ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            <hr> headers<hr>
+            <?= $headers_encoded ?>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <hr> Transaction details<hr>
+            <?= $body?>
+        </td>
+    </tr>
+
     <tr>
         <td colspan="2">
             <hr> Full Response<hr>
@@ -89,7 +124,7 @@ td.half iframe{
     </tr>
     <tr>
         <td class="half">
-            <hr> Parsedl Response<hr>
+            <hr> Parsed Response<hr>
             <!-- Display the transaction results as an HTML unordered list by iterating over the associative array $results -->
             <?= parseArray($results)?>
         </td>

@@ -1,7 +1,8 @@
+.buildpath
 .classpath
 .project
 .settings/
-.idea/
+.idea
 coverage/
 karma/
 node_modules/

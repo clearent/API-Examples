@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<style>
+    <meta charset="utf-8">
+    <style>
 * {
     font-family: Verdana, "Times New Roman", Times, serif;
     outline: 0;
@@ -57,7 +57,7 @@ select, input[type="text"] {
 }
 
 input[type="text"] {
-    width: 200px;
+    width: 400px;
 }
 
 .btn {
@@ -73,7 +73,7 @@ input[type="text"] {
 }
 
 .btn:hover {
-    
+
 }
 
 input[type="text"]:valid {
@@ -93,61 +93,61 @@ input[type="text"]:invalid, input:focus:invalid {
         rgba(255, 255, 255, 1) 100%);
 }
 </style>
-<script type="text/javascript">
-	
-</script>
+    <script type="text/javascript">
+
+    </script>
 </head>
 <body>
-    <!-- 
+<!--
 (\d{4}[ \-]?\d{4}[ \-]?\d{4}[ \-]?(\d{1}|\d{4}))
 
 Simple regex pattern to allow entry of 13 digit or 16 digit card numbers.
 Allows all digits or groups of 4 digits separated by a dash ( - ) or a space.
-You should allow users to enter card numbers how they read them; spaces and 
+You should allow users to enter card numbers how they read them; spaces and
 dashes should be removed on the server.
 -->
-    <div class="transcation_div">
-        <div class="transaction_header">Transaction</div>
-        <div class="transaction_body">
-            <form name="transaction" action="txn.php" method="post">
-                <table>
-                    <tr>
-                        <td>Transaction Type</td>
-                        <td><select name="trantype">
-                                <option value="SALE">Sale</option>
-                                <option value="AUTH">Authorization</option>
-                        </select></td>
-                    </tr>
-                    <tr>
-                        <td>Card</td>
-                        <td><input required type="text"
-                            name="cardnum" value="4111 1111 1111 1111"
-                            pattern="(\d{4}[ \-]?\d{4}[ \-]?\d{4}[ \-]?(\d{4}|\d{1}))"
-                            oninvalid="setCustomValidity('Card numbers must be 13 or 16 digits.')"
-                            onchange="try{setCustomValidity('')}catch(e){}"
-                            onblur="this.checkValidity();"></td>
-                    </tr>
-                    <tr>
-                        <td>Amount</td>
-                        <td><input required type="text"
-                            name="amount"></td>
-                    </tr>
-                    <tr>
-                        <td>ExpDate</td>
-                        <td><input required type="text"
-                            name="expdate"
-                            pattern="((1[0-2]?|[2-9])[0-9][0-9])"
-                            oninvalid="setCustomValidity('Enter month and year (myy) - do not use preceding zero for month.')"
-                            onchange="try{setCustomValidity('')}catch(e){}"
-                            placeholder="myy"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input type="submit" class="btn"></td>
-                    </tr>
-                </table>
-            </form>
-        </div>
+<div class="transcation_div">
+    <div class="transaction_header">Add a token</div>
+    <div class="transaction_body">
+        <form name="token" action="token.php" method="post">
+            <table>
+                <tr>
+                    <td>Card</td>
+                    <td><input required type="text"
+                               name="card" value="4111 1111 1111 1111"></td>
+                </tr>
+                <tr>
+                    <td>Card type</td>
+                    <td><input required type="text"
+                               name="cardtype" value="VISA"></td>
+                </tr>
+                <tr>
+                    <td>Exp date</td>
+                    <td><input required type="text"
+                               name="expdate" value="1019"></td>
+                </tr>
+                <tr>
+                    <td>CSC</td>
+                    <td><input required type="text"
+                               name="csc" value="999"></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td><input required type="text"
+                               name="description" value="test"></td>
+                </tr>
+                <tr>
+                    <td>Customer key</td>
+                    <td><input required type="text"
+                               name="customerkey" value="cust_f42eb217-8618-477a-ac26-a90a29f31ba3"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" class="btn"></td>
+                </tr>
+            </table>
+        </form>
     </div>
+</div>
 </body>
 </html>
