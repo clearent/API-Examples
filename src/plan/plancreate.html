@@ -100,144 +100,65 @@ input[type="text"]:invalid, input:focus:invalid {
 <body>
 
 <div class="transaction_div">
-    <div class="transaction_header">Add a customer</div>
+    <div class="transaction_header">Add a plan</div>
     <div class="transaction_body">
-        <form name="token" action="customercreate.php" method="post">
+        <form name="token" action="plancreate.php" method="post">
             <table>
                 <tr>
-                    <td>Email</td>
+                    <td>Plan name</td>
                     <td><input required type="text"
-                               name="email" value="testcustomer@clearent.com"></td>
+                               name="planname" value="Platinum Gym Membership"></td>
                 </tr>
                 <tr>
-                    <td>Phone Number</td>
+                    <td>Type</td>
                     <td><input required type="text"
-                               name="phone" value="0123456789"></td>
+                               name="type" value="SUBSCRIPTION"></td>
                 </tr>
                 <tr>
-                    <td>Comments</td>
+                    <td>Customer key</td>
                     <td><input required type="text"
-                               name="comments" value="Super loyal customer"></td>
+                               name="customerkey" value="CUSTOMER-KEY"></td>
                 </tr>
                 <tr>
-                    <td>First Name</td>
+                    <td>Token ID</td>
                     <td><input required type="text"
-                               name="firstname" value="William"></td>
+                               name="tokenid" value="TOKEN-ID"></td>
                 </tr>
                <tr>
-                    <td>Last Name</td>
+                    <td>Frequency</td>
                     <td><input required type="text"
-                               name="lastname" value="Biller"></td>
-                </tr>
-                <!--Billing Address-->
-                <tr>
-                    <td>Billing Address</td>
+                               name="frequency" value="MONTHLY"></td>
                 </tr>
                 <tr>
-                    <td>First Name</td>
+                    <td>Frequency Day</td>
                     <td><input type="text"
-                               name="firstnamebill" value="William"></td>
+                               name="frequencyday" value="15"></td>
                 </tr>
                 <tr>
-                    <td>Last Name</td>
+                    <td>Frequency Month</td>
                     <td><input required type="text"
-                               name="lastnamebill" value="Biller"></td>
+                               name="frequencymonth" value="10"></td>
                 </tr>
                 <tr>
-                    <td>Company</td>
+                    <td>Start date</td>
                     <td><input required type="text"
-                               name="companybill" value="We Bill LLC"></td>
+                               name="startdate" value="2016-08-01"></td>
                 </tr>
                 <tr>
-                    <td>Street</td>
+                    <td>End date</td>
                     <td><input required type="text"
-                               name="streetbill" value="123 Bill St"></td>
+                               name="enddate" value="2016-12-01"></td>
                 </tr>
                 <tr>
-                    <td>Street 2</td>
+                    <td>Status</td>
                     <td><input required type="text"
-                               name="street2bill" value="Suite 888"></td>
+                               name="status" value="ACTIVE"></td>
                 </tr>
                 <tr>
-                    <td>City</td>
+                    <td>Payment amount</td>
                     <td><input required type="text"
-                               name="citybill" value="Richmond"></td>
+                               name="paymentamount" value="50.00"></td>
                 </tr>
-                <tr>
-                    <td>State</td>
-                    <td><input required type="text"
-                               name="statebill" value="MO"></td>
-                </tr>
-                <tr>
-                    <td>Zip</td>
-                    <td><input required type="text"
-                               name="zipbill" value="63103"></td>
-                </tr>
-                <tr>
-                    <td>Country</td>
-                    <td><input required type="text"
-                               name="countrybill" value="United States"></td>
-                </tr>
-                <tr>
-                    <td>Phone</td>
-                    <td><input required type="text"
-                               name="phonebill" value="0123456789"></td>
-                </tr>
-                <!--Shipping Address-->
-                <tr>
-                    <td>Shipping Address</td>
-                </tr>
-                <tr>
-                    <td>First Name</td>
-                    <td><input type="text"
-                               name="firstnameship" value="Chip"></td>
-                </tr>
-                <tr>
-                    <td>Last Name</td>
-                    <td><input required type="text"
-                               name="lastnameship" value="Shipper"></td>
-                </tr>
-                <tr>
-                    <td>Company</td>
-                    <td><input required type="text"
-                               name="companyship" value="We Ship LLC"></td>
-                </tr>
-                <tr>
-                    <td>Street</td>
-                    <td><input required type="text"
-                               name="streetship" value="123 ship St"></td>
-                </tr>
-                <tr>
-                    <td>Street 2</td>
-                    <td><input required type="text"
-                               name="street2ship" value="Suite 555"></td>
-                </tr>
-                <tr>
-                    <td>City</td>
-                    <td><input required type="text"
-                               name="cityship" value="Seattle"></td>
-                </tr>
-                <tr>
-                    <td>State</td>
-                    <td><input required type="text"
-                               name="stateship" value="WA"></td>
-                </tr>
-                <tr>
-                    <td>Zip</td>
-                    <td><input required type="text"
-                               name="zipship" value="23227"></td>
-                </tr>
-                <tr>
-                    <td>Country</td>
-                    <td><input required type="text"
-                               name="countryship" value="United States"></td>
-                </tr>
-                <tr>
-                    <td>Phone</td>
-                    <td><input required type="text"
-                               name="phoneship" value="0123456789"></td>
-                </tr>
-
                 <tr>
                     <td></td>
                     <td><input type="submit" class="btn"></td>

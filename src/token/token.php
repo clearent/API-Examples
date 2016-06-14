@@ -12,7 +12,7 @@ function parseArray($data) {
             if (is_array ( $value )) {
                 $html .= "<b>" . $key . "</b> : " . parseArray ( $value );
             } else if ($key == "href") {
-                $html .= "<b>" . $key . "</b> : <a href=\"token_detail.php?id=" . $trans_id . "\" target=\"token_detail\" >" . $trans_id . " - " . $value . "</a>";
+                $html .= "<b>" . $key . "</b> : <a href=\"request_detail.php?id=" . $trans_id . "\" target=\"request_detail\" >" . $trans_id . " - " . $value . "</a>";
             } else {
                 if ($key == "id") {
                     $trans_id = $value;
@@ -30,7 +30,7 @@ function parseArray($data) {
 $uri = "https://gateway-sb.clearent.net/rest/v2/tokens";
 $trans_id=0;
 $contenttype = "application/json";
-$apikey = "12fa1a5617464354a72b3c9eb92d4f3b";
+$apikey = "YOUR-API-KEY-HERE";
 
 
 $headers = array (
@@ -47,8 +47,8 @@ $csc = $_POST ['csc'];
 $description = $_POST ['description'];
 $customerkey = $_POST ['customerkey'];
 
-// Build the PHP associative array "$txnDetails" that contains the transaction elements
-$txnDetails = array (
+// Build the PHP associative array "$tokenDetails" that contains the token elements
+$tokenDetails = array (
         "card" => $card,
         "card-type" => $cardtype,
         "exp-date" => $expdate,
@@ -57,7 +57,7 @@ $txnDetails = array (
         "customer-key" => $customerkey
 );
 // Convert the PHP associative array to JSON
-$body = json_encode ( $txnDetails );
+$body = json_encode ( $tokenDetails );
 $headers_encoded = json_encode ( $headers );
 $ch = curl_init ();
 
@@ -71,7 +71,6 @@ curl_setopt ( $ch, CURLOPT_POSTFIELDS, $body );
 curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, 1 );
 
 // ignore ssl for our test
-//curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, false );
 curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
 
 // execute request
@@ -114,7 +113,7 @@ td.half iframe{
     </tr>
     <tr>
         <td colspan="2">
-            <hr> Transaction details<hr>
+            <hr> Token details<hr>
             <?= $body?>
         </td>
     </tr>
@@ -132,7 +131,7 @@ td.half iframe{
             <?= parseArray($results)?>
         </td>
         <td class="half">
-            <iframe src="about:blank" name="token detail" id="token_detail"></iframe>
+            <iframe src="about:blank" name="request detail" id="request_detail"></iframe>
         </td>
     </tr>
 </table>

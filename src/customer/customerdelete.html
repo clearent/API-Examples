@@ -57,7 +57,7 @@ select, input[type="text"] {
 }
 
 input[type="text"] {
-    width: 400px;
+    width: 200px;
 }
 
 .btn {
@@ -100,39 +100,14 @@ input[type="text"]:invalid, input:focus:invalid {
 <body>
 
 <div class="transaction_div">
-    <div class="transaction_header">Add a token</div>
+    <div class="transaction_header">Delete a customer</div>
     <div class="transaction_body">
-        <form name="token" action="token.php" method="post">
+        <form name="token" action="customerdelete.php" method="post">
             <table>
-                <tr>
-                    <td>Card</td>
-                    <td><input required type="text"
-                               name="card" value="4111 1111 1111 1111"></td>
-                </tr>
-                <tr>
-                    <td>Card type</td>
-                    <td><input required type="text"
-                               name="cardtype" value="VISA"></td>
-                </tr>
-                <tr>
-                    <td>Exp date</td>
-                    <td><input required type="text"
-                               name="expdate" value="1019"></td>
-                </tr>
-                <tr>
-                    <td>CSC</td>
-                    <td><input required type="text"
-                               name="csc" value="999"></td>
-                </tr>
-                <tr>
-                    <td>Description</td>
-                    <td><input required type="text"
-                               name="description" value="test"></td>
-                </tr>
                 <tr>
                     <td>Customer key</td>
                     <td><input required type="text"
-                               name="customerkey" value="CUSTOMER-KEY-HERE"></td>
+                               name="customerkey" value="CUSTOMER-KEY"></td>
                 </tr>
                 <tr>
                     <td></td>

@@ -27,11 +27,10 @@ function parseArray($data) {
 }
 
 // Set the API URI
-$uri = "https://gateway-sb.clearent.net/rest/v2/customers";
+$uri = "https://gateway-sb.clearent.net/rest/v2/payment-plans/PLAN-KEY";
 $trans_id=0;
 $contenttype = "application/json";
-$apikey = "12fa1a5617464354a72b3c9eb92d4f3b";
-
+$apikey = "YOUR-API-KEY-HERE";
 
 $headers = array (
         "Accept: " . $contenttype,
@@ -39,69 +38,14 @@ $headers = array (
         "Cache-Control: no-cache",
         "api-key: " . $apikey
 );
-// customer detail variables
-$email = $_POST ['email'];
-$phone = $_POST ['phone'];
-$comments = $_POST ['comments'];
-$firstname = $_POST ['firstname'];
-$lastname = $_POST ['lastname'];
-//billing address
-$firstnamebill = $_POST ['firstnamebill'];
-$lastnamebill = $_POST ['lastnamebill'];
-$companybill = $_POST ['companybill'];
-$streetbill = $_POST ['streetbill'];
-$street2bill = $_POST ['street2bill'];
-$citybill = $_POST ['citybill'];
-$zipbill = $_POST ['zipbill'];
-$countrybill = $_POST ['countrybill'];
-$phonebill = $_POST ['phonebill'];
-//shipping address
-$firstnameship = $_POST ['firstnameship'];
-$lastnameship = $_POST ['lastnameship'];
-$companyship = $_POST ['companyship'];
-$streetship = $_POST ['streetship'];
-$street2ship = $_POST ['street2ship'];
-$cityship = $_POST ['cityship'];
-$zipship = $_POST ['zipship'];
-$countryship = $_POST ['countryship'];
-$phoneship = $_POST ['phoneship'];
+$planname = $_GET ['planname'];
 
-$billingaddress = array (
-        "first-name" => $firstnamebill,
-        "last-name" => $lastnamebill,
-        "company" => $companybill,
-        "street" => $streetbill,
-        "street2" => $street2bill,
-        "city" => $citybill,
-        "zip" => $zipbill,
-        "country" => $countrybill,
-        "phone" => $phonebill,
+$planDetails = array (
+        "plan-name" => $planname
 );
 
-$shippingaddress = array (
-        "first-name" => $firstnameship,
-        "last-name" => $lastnameship,
-        "company" => $companyship,
-        "street" => $streetship,
-        "street2" => $street2ship,
-        "city" => $cityship,
-        "zip" => $zipship,
-        "country" => $countryship,
-        "phone" => $phoneship,
-);
-
-// Build the PHP associative array "$customerDetails" that contains the customer elements as well as the nested billing and shipping addresses
-$customerDetails = array (
-        "email" => $email,
-        "phone" => $phone,
-        "comments" => $comments,
-        "first-name" => $firstname,
-        "last-name" => $lastname,
-        "billing-address" => $billingaddress,
-        "shipping-address" => $shippingaddress
-);
 // Convert the PHP associative array to JSON
-$body = json_encode ( $customerDetails );
+$body = json_encode ( $planDetails );
 $headers_encoded = json_encode ( $headers );
 $ch = curl_init ();
 
@@ -110,9 +54,11 @@ curl_setopt ( $ch, CURLOPT_URL, $uri );
 // set the headers
 curl_setopt ( $ch, CURLOPT_HTTPHEADER, $headers );
 // set the body
-curl_setopt ( $ch, CURLOPT_POSTFIELDS, $body );
+curl_setopt ( $ch, CURLOPT_CUSTOMREQUEST, "PUT");
+curl_setopt ( $ch, CURLOPT_POSTFIELDS, $body);
 // return full response if curl_exec is successful
-curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, 1 );
+curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, true );
+
 
 // ignore ssl for our test
 curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );

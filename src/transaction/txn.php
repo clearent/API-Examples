@@ -12,7 +12,7 @@ function parseArray($data) {
             if (is_array ( $value )) {
                 $html .= "<b>" . $key . "</b> : " . parseArray ( $value );
             } else if ($key == "href") {
-                $html .= "<b>" . $key . "</b> : <a href=\"tran_detail.php?id=" . $trans_id . "\" target=\"tran_detail\" >" . $trans_id . " - " . $value . "</a>";
+                $html .= "<b>" . $key . "</b> : <a href=\"request_detail.php?id=" . $trans_id . "\" target=\"request_detail\" >" . $trans_id . " - " . $value . "</a>";
             } else {
                 if ($key == "id") {
                     $trans_id = $value;
@@ -30,7 +30,7 @@ function parseArray($data) {
 $uri = "https://gateway-sb.clearent.net/rest/v2/transactions";
 $trans_id=0;
 $contenttype = "application/json";
-$apikey = "12fa1a5617464354a72b3c9eb92d4f3b";
+$apikey = "YOUR-API-KEY-HERE";
 
 
 $headers = array (
@@ -111,7 +111,7 @@ td.half iframe{
     </tr>
     <tr>
         <td colspan="2">
-            <hr> Transaction details<hr>
+            <hr> Request details<hr>
             <?= $body?>
         </td>
     </tr>
@@ -129,7 +129,7 @@ td.half iframe{
             <?= parseArray($results)?>
         </td>
         <td class="half">
-            <iframe src="about:blank" name="tran_detail" id="tran_detail"></iframe>
+            <iframe src="about:blank" name="request_detail" id="request_detail"></iframe>
         </td>
     </tr>
 </table>
