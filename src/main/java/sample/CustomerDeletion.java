@@ -1,8 +1,5 @@
 package sample;
 
-import com.google.gson.Gson;
-import sample.domain.recurringPayments.Customer;
-
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
