@@ -11,7 +11,7 @@ import java.net.ProtocolException;
 import java.net.URL;
 
 public class PutAvsSettings {
-    private static final String API_URI = "https://cladevgsops02.clearent.net:8490/rest/v2/settings/terminal/avs";
+    private static final String API_URI = "https://gateway-sb.clearent.net/rest/v2/settings/terminal/avs";
     private static final String API_KEY = "YOUR_API_KEY_HERE";
     private static final String ACCEPT_HEADER_KEY = "Accept";
     private static final String APPLICATION_JSON = "application/json";
