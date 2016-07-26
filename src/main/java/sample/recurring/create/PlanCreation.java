@@ -1,7 +1,7 @@
-package sample.create;
+package sample.recurring.create;
 
 import com.google.gson.Gson;
-import sample.domain.recurringPayments.Customer;
+import sample.domain.recurringPayments.Plan;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,9 +13,9 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
-public class CustomerCreation {
+public class PlanCreation {
 
-    private static final String API_URI = "https://gateway-qa.clearent.net/rest/v2/customers";
+    private static final String API_URI = "https://gateway-sb.clearent.net/rest/v2/payment-plans";
     private static final String API_KEY = "YOUR-API-KEY-HERE";
     private static final String ACCEPT_HEADER_KEY = "Accept";
     private static final String APPLICATION_JSON = "application/json";
@@ -25,16 +25,16 @@ public class CustomerCreation {
 
     public static void main(String[] args) throws Exception {
         String response;
-        System.out.println("Beginning adding Customer");
-        response = addCustomer();
+        System.out.println("Beginning adding payment plan");
+        response = addPlan();
         System.out.println(response);
 
     }
 
-    private static String addCustomer() throws Exception {
-        Customer customer = new Customer();
+    private static String addPlan() throws Exception {
+        Plan plan = new Plan();
         Gson gson = new Gson();
-        String jsonCustomer = gson.toJson(customer);
+        String jsonCustomer = gson.toJson(plan);
         return requestTransaction(jsonCustomer);
     }
     private static String requestTransaction(String requestBody)
@@ -57,7 +57,8 @@ public class CustomerCreation {
         }
     }
 
-    private static HttpURLConnection setupHttpConnection(final String apiEndpoint) {
+    private static HttpURLConnection setupHttpConnection(
+            final String apiEndpoint) {
         final URL url = createUrl(apiEndpoint);
         return openHttpConnection(url);
     }

@@ -1,7 +1,7 @@
-package sample.create;
+package sample.recurring.create;
 
 import com.google.gson.Gson;
-import sample.domain.TokenAVS;
+import sample.domain.recurringPayments.Customer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,9 +13,9 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
-public class TokenCreationAVS {
+public class CustomerCreation {
 
-    private static final String API_URI = "https://gateway-sb.clearent.net/rest/v2/tokens";
+    private static final String API_URI = "https://gateway-qa.clearent.net/rest/v2/customers";
     private static final String API_KEY = "YOUR-API-KEY-HERE";
     private static final String ACCEPT_HEADER_KEY = "Accept";
     private static final String APPLICATION_JSON = "application/json";
@@ -25,17 +25,17 @@ public class TokenCreationAVS {
 
     public static void main(String[] args) throws Exception {
         String response;
-        System.out.println("Beginning adding token");
-        response = addToken();
+        System.out.println("Beginning adding Customer");
+        response = addCustomer();
         System.out.println(response);
 
     }
 
-    private static String addToken() throws Exception {
-        TokenAVS token = new TokenAVS();
+    private static String addCustomer() throws Exception {
+        Customer customer = new Customer();
         Gson gson = new Gson();
-        String jsonToken = gson.toJson(token);
-        return requestTransaction(jsonToken);
+        String jsonCustomer = gson.toJson(customer);
+        return requestTransaction(jsonCustomer);
     }
     private static String requestTransaction(String requestBody)
             throws IOException {
@@ -117,4 +117,3 @@ public class TokenCreationAVS {
         httpConnection.setRequestProperty("api-key", API_KEY);
     }
 }
-

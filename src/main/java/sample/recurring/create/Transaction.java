@@ -1,7 +1,8 @@
-package sample.create;
+package sample.recurring.create;
 
 import com.google.gson.Gson;
-import sample.domain.Batch;
+import sample.domain.transaction.*;
+import sample.domain.transaction.Void;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,31 +14,92 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
-public class BatchValidation {
+public class Transaction {
 
-    private static final String API_URI = "https://gateway-sb.clearent.net/rest/v2/batches/open";
+    private static final String API_URI = "https://gateway-sb.clearent.net/rest/v2/transactions";
     private static final String API_KEY = "YOUR-API-KEY-HERE";
     private static final String ACCEPT_HEADER_KEY = "Accept";
     private static final String APPLICATION_JSON = "application/json";
     private static final String CONTENT_TYPE_KEY = "Content-Type";
-    private static final String POST_METHOD = "PUT";
+    private static final String POST_METHOD = "POST";
     private static final boolean OUTPUT_TRUE = true;
 
     public static void main(String[] args) throws Exception {
         String response;
-        // sale
-        System.out.println("Beginning validating batch");
-        response = addCustomer();
+
+        // sale --
+        System.out.println("Beginning Sale Request");
+        response = requestSale();
         System.out.println(response);
 
+        // authorization --
+        System.out.println("Beginning Authorization Request");
+        response = requestAuth();
+        System.out.println(response);
+
+        // capture
+        System.out.println("Beginning Capture Request");
+        response = requestCapture();
+        System.out.println(response);
+
+        // forced sale --
+        System.out.println("Beginning Forced Request");
+        response = requestForcedSale();
+        System.out.println(response);
+
+        // refund
+        System.out.println("Beginning Refund Request");
+        response = requestRefund();
+        System.out.println(response);
+
+        // void
+        System.out.println("Beginning Void Request");
+        response = requestVoid();
+        System.out.println(response);
     }
 
-    private static String addCustomer() throws Exception {
-        Batch batch = new Batch();
+    private static String requestSale() throws Exception {
+        Sale sale = new Sale();
         Gson gson = new Gson();
-        String json = gson.toJson(batch);
-        return requestTransaction(json);
+        String jsonSale = gson.toJson(sale);
+        return requestTransaction(jsonSale);
     }
+
+    public static String requestAuth() throws Exception {
+        Auth auth = new Auth();
+        Gson gson = new Gson();
+        String jsonAuth = gson.toJson(auth);
+        return requestTransaction(jsonAuth);
+    }
+
+    public static String requestCapture() throws Exception {
+        Capture capture = new Capture();
+        Gson gson = new Gson();
+        String jsonCapture = gson.toJson(capture);
+        return requestTransaction(jsonCapture);
+    }
+
+    public static String requestForcedSale() throws Exception {
+        ForcedSale forced = new ForcedSale();
+        Gson gson = new Gson();
+        String jsonForced = gson.toJson(forced);
+        return requestTransaction(jsonForced);
+    }
+
+    public static String requestRefund() throws Exception {
+        Refund refund = new Refund();
+        Gson gson = new Gson();
+        String jsonRefund = gson.toJson(refund);
+        return requestTransaction(jsonRefund);
+    }
+
+    public static String requestVoid() throws Exception {
+        Void voidTransaction = new Void();
+        Gson gson = new Gson();
+        String jsonVoid = gson.toJson(voidTransaction);
+        return requestTransaction(jsonVoid);
+    }
+
     private static String requestTransaction(String requestBody)
             throws IOException {
 
@@ -58,7 +120,8 @@ public class BatchValidation {
         }
     }
 
-    private static HttpURLConnection setupHttpConnection(final String apiEndpoint) {
+    private static HttpURLConnection setupHttpConnection(
+            final String apiEndpoint) {
         final URL url = createUrl(apiEndpoint);
         return openHttpConnection(url);
     }
@@ -100,7 +163,7 @@ public class BatchValidation {
     }
 
     private static void sendRequest(final String requestBody,
-                                    final OutputStream outputStream) {
+            final OutputStream outputStream) {
         try {
             outputStream.write(requestBody.getBytes());
             outputStream.flush();
@@ -117,4 +180,5 @@ public class BatchValidation {
         httpConnection.setRequestProperty(ACCEPT_HEADER_KEY, APPLICATION_JSON);
         httpConnection.setRequestProperty("api-key", API_KEY);
     }
+
 }

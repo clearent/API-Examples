@@ -1,29 +1,43 @@
-package sample;
+package sample.recurring.create;
 
-import java.io.*;
+import com.google.gson.Gson;
+import sample.domain.Batch;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
-public class TokenDeletion {
+public class BatchValidation {
 
-    private static final String API_URI = "https://gateway-sb.clearent.net/rest/v2/tokens/TOKEN-KEY-HERE";
+    private static final String API_URI = "https://gateway-sb.clearent.net/rest/v2/batches/open";
     private static final String API_KEY = "YOUR-API-KEY-HERE";
     private static final String ACCEPT_HEADER_KEY = "Accept";
     private static final String APPLICATION_JSON = "application/json";
     private static final String CONTENT_TYPE_KEY = "Content-Type";
-    private static final String POST_METHOD = "DELETE";
+    private static final String POST_METHOD = "PUT";
     private static final boolean OUTPUT_TRUE = true;
 
     public static void main(String[] args) throws Exception {
         String response;
-        String input = "";
-        System.out.println("Beginning deleting token");
-        response = requestTransaction(input);
+        // sale
+        System.out.println("Beginning validating batch");
+        response = addCustomer();
         System.out.println(response);
+
     }
 
+    private static String addCustomer() throws Exception {
+        Batch batch = new Batch();
+        Gson gson = new Gson();
+        String json = gson.toJson(batch);
+        return requestTransaction(json);
+    }
     private static String requestTransaction(String requestBody)
             throws IOException {
 

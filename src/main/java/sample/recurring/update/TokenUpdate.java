@@ -1,4 +1,4 @@
-package sample.update;
+package sample.recurring.update;
 
 import com.google.gson.Gson;
 import sample.domain.recurringPayments.TokenInfo;
