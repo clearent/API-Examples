@@ -1,0 +1,70 @@
+### Java ###
+.class
+ 
+# Package Files #
+.jar
+.war
+.ear
+ 
+# virtual machine crash logs, see httpwww.java.comendownloadhelperror_hotspot.xml
+hs_err_pid
+*.log
+ 
+### Eclipse ###
+.pydevproject
+.metadata
+.gradle
+bin
+tmp
+target
+.tmp
+.bak
+.swp
+~.nib
+.settings
+.loadpath
+.classpath
+.project
+ 
+# External tool builders
+.externalToolBuilders
+ 
+# Locally stored Eclipse launch configurations
+.launch
+ 
+### Intellij ###
+*.iml
+out
+ 
+## Directory-based project format
+.idea
+ 
+## File-based project format
+.ipr
+.iws
+ 
+### Windows ###
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+ 
+# Folder config file
+Desktop.ini
+ 
+# Recycle Bin used on file shares
+$RECYCLE.BIN
+ 
+# Windows Installer files
+.cab
+.msi
+.msm
+.msp
+ 
+# Windows shortcuts
+.lnk
+
+# Maven
+*/target/*
+
+#Velocity Logs
+velocity.log*
