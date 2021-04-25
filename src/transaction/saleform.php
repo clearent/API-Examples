@@ -14,10 +14,14 @@ Allows all digits or groups of 4 digits separated by a dash ( - ) or a space.
 You should allow users to enter card numbers how they read them; spaces and
 dashes should be removed on the server.
 -->
+<?php
+// random number between $upper and $lower, inclusive
+$random_amount = mt_rand(5, 150) . "." . mt_rand(10, 99);
+?>
 <div class="transaction_div">
     <div class="transaction_header">Transaction</div>
     <div class="transaction_body">
-        <form name="transaction" action="sale.php" method="post">
+        <form name="transaction" action="runsale.php" method="post">
             <table>
                 <tr>
                     <td>Transaction Type</td>
@@ -38,7 +42,7 @@ dashes should be removed on the server.
                 <tr>
                     <td>Amount</td>
                     <td><input required type="text"
-                               name="amount" value="12.55"></td>
+                               name="amount" value="<?= $random_amount ?>"></td>
                 </tr>
                 <tr>
                     <td>ExpDate</td>
