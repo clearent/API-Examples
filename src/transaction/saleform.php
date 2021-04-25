@@ -19,9 +19,9 @@ dashes should be removed on the server.
 $random_amount = mt_rand(5, 150) . "." . mt_rand(10, 99);
 ?>
 <div class="transaction_div">
-    <div class="transaction_header">Transaction</div>
+    <div class="transaction_header">Sale Transaction</div>
     <div class="transaction_body">
-        <form name="transaction" action="runsale.php" method="post">
+        <form name="transaction" action="sale.php" method="post">
             <table>
                 <tr>
                     <td>Transaction Type</td>

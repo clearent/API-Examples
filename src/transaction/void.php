@@ -39,17 +39,12 @@ $headers = array (
 );
 
 $trantype = $_POST ['trantype'];
-$amount = $_POST ['amount'];
-// make sure card number only contains numbers (remove any non-digits)
-$cardnum = preg_replace ( "/[^0-9,.]/", "", $_POST ['cardnum'] );
-$expdate = $_POST ['expdate'];
+$id = $_POST ['id'];
 
 // Build the PHP associative array "$txnDetails" that contains the transaction elements
 $txnDetails = array (
         "type" => $trantype,
-        "amount" => $amount,
-        "card" => $cardnum,
-        "exp-date" => $expdate
+        "id" => $id
 );
 // Convert the PHP associative array to JSON
 $body = json_encode ( $txnDetails );
@@ -93,7 +88,6 @@ td.half iframe{
 }
 </style>
 <table>
-
     <tr>
         <td colspan="2">
             <hr> curl errors<hr>

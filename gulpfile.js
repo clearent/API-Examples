@@ -1,7 +1,7 @@
 let gulp = require('gulp');
 
 let SRC_DIR = 'src/';
-let PHP_DIR = 'c:/wamp/www/php_example/';
+let PHP_DIR = 'c:/wamp/www/ClearentPHP/';
 
 let PHP_files = [SRC_DIR + '**/*.html', SRC_DIR + '**/*.php', SRC_DIR + '**/*.png', SRC_DIR + '**/*.css', SRC_DIR + '**/*.js'];
 
