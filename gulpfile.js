@@ -1,17 +1,13 @@
-var concat = require('gulp-concat');
-var gulp = require('gulp');
-var minify = require('gulp-minify-css');
-var uglify = require('gulp-uglify');
-var del = require('del');
-//var shell = require('gulp-shell');
+let gulp = require('gulp');
 
-var SRC_DIR      = 'src/';
-var PHP_DIR       = 'C:/wamp/www/php_example/';
+let SRC_DIR = 'src/';
+let PHP_DIR = 'c:/wamp/www/php_example/';
 
-var PHP_files = [SRC_DIR + '**/*.html', SRC_DIR + '**/*.php', SRC_DIR + '**/*.png', SRC_DIR + '**/*.css', SRC_DIR + '**/*.js'];
+let PHP_files = [SRC_DIR + '**/*.html', SRC_DIR + '**/*.php', SRC_DIR + '**/*.png', SRC_DIR + '**/*.css', SRC_DIR + '**/*.js'];
 
 
 gulp.task('php', function () {
+    "use strict";
     return gulp
         .src([SRC_DIR + '**/*'])
         .pipe(gulp.dest(PHP_DIR));
@@ -19,8 +15,9 @@ gulp.task('php', function () {
 
 // Watch for file changes
 gulp.task('watch', function () {
-    gulp.watch(PHP_files, ['php']);
+    "use strict";
+    gulp.watch(PHP_files, gulp.series(['php']));
 });
 
 // Run all build steps and watch in development environment
-gulp.task('default', ['php','watch']);
+gulp.task('default', gulp.series(['php', 'watch']));
