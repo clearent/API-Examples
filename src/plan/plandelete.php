@@ -1,3 +1,4 @@
+<?php include '../config/config.php';?>
 <?php
 
 function parseArray($data) {
@@ -29,15 +30,12 @@ $address = $_POST ['plankey'];
 // Set the API URI
 $uri = "https://gateway-sb.clearent.net/rest/v2/payment-plans/" . $address;
 $trans_id=0;
-$contenttype = "application/json";
-$apikey = "YOUR-API-KEY-HERE";
-
 
 $headers = array (
-        "Accept: " . $contenttype,
-        "Content-Type: " . $contenttype,
+        "Accept: " . ACCEPT,
+        "Content-Type: " . CONTENT_TYPE,
         "Cache-Control: no-cache",
-        "api-key: " . $apikey
+        "api-key: " . API_KEY
 );
 
 // Convert the PHP associative array to JSON

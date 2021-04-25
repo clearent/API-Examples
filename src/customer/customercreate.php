@@ -1,3 +1,4 @@
+<?php include '../config/config.php';?>
 <?php
 
 function parseArray($data) {
@@ -29,15 +30,12 @@ function parseArray($data) {
 // Set the API URI
 $uri = "https://gateway-sb.clearent.net/rest/v2/customers";
 $trans_id=0;
-$contenttype = "application/json";
-$apikey = "12fa1a5617464354a72b3c9eb92d4f3b";
-
 
 $headers = array (
-        "Accept: " . $contenttype,
-        "Content-Type: " . $contenttype,
+        "Accept: " . ACCEPT,
+        "Content-Type: " . CONTENT_TYPE,
         "Cache-Control: no-cache",
-        "api-key: " . $apikey
+        "api-key: " . API_KEY
 );
 // customer detail variables
 $email = $_POST ['email'];

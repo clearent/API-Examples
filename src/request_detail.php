@@ -3,14 +3,14 @@
 $id = $_GET ['id'];
 // Set the API URI
 $uri = "https://gateway-sb.clearent.net/rest/v2/tokens?id=" . $id;
-$contenttype = "text/html";
-$apikey = "12fa1a5617464354a72b3c9eb92d4f3b";
+CONTENT_TYPE = "text/html";
+API_KEY = "12fa1a5617464354a72b3c9eb92d4f3b";
 
 $headers = array (
-        "Accept: " . $contenttype,
-        "Content-Type: " . $contenttype,
+        "Accept: " . CONTENT_TYPE,
+        "Content-Type: " . CONTENT_TYPE,
         "Cache-Control: no-cache",
-        "api-key: " . $apikey
+        "api-key: " . API_KEY
 );
 
 $ch = curl_init ();
