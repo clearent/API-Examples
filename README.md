@@ -1,5 +1,8 @@
 # API Examples
 
+## Configuration
+Add your test api key to src/config/config.php
+
 #### If you want to push changes to your local webserver as you edit and test these files locally follow the steps below. 
 Requires node/npm https://nodejs.org/en/download/
 
